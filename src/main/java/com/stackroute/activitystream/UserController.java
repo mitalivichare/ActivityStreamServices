@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.stackroute.activitystream.dao.UserDAO;
 import com.stackroute.activitystream.model.User;
 
+//see similar comments in circle controller.
 @RestController
 public class UserController {
 	
