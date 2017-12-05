@@ -16,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 public class ActivityStreamServicesApplication {
 	
+	//this method is not required here.  it required only for back end.
 	@Bean  
     public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf){  
         return hemf.getSessionFactory();  
