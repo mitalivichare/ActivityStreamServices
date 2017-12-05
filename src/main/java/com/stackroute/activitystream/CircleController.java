@@ -17,6 +17,7 @@ import com.stackroute.activitystream.model.Circle;
 @RestController
 public class CircleController {
 	
+	//use private access specifier
 	@Autowired
 	CircleDAO circleDAO;
 	
@@ -29,11 +30,13 @@ public class CircleController {
 	{
 		try
 		{
+			//need to check duplicate circle.
 		circleDAO.createCircle(circle);
 		return new ResponseEntity<Circle>(circle,HttpStatus.OK);
 		}
 		catch(Exception e)
 		{
+			//give proper message, not void
 			return new ResponseEntity<Void>(HttpStatus.SERVICE_UNAVAILABLE);
 		}
 	}
@@ -43,11 +46,14 @@ public class CircleController {
 	{
 		try
 		{
+			//need to check whether circle exist or not.
+			//based on this you need to send proper message
 			circleDAO.updateCircle(circle);
 			return new ResponseEntity<Circle>(circle,HttpStatus.OK);
 		}
 		catch(Exception e)
 		{
+			//give proper message, not void
 			return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -57,11 +63,14 @@ public class CircleController {
 	{
 		try
 		{
+			//need to check whether circle exist or not.
+			//based on this you need to send proper message
 			circleDAO.deleteCircle(circleId);
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}
 		catch(Exception e)
 		{
+			//give proper message, not void
 			return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -76,6 +85,7 @@ public class CircleController {
 		}
 		catch(Exception e)
 		{
+			//give proper message, not void
 			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		}
 	}
@@ -90,6 +100,7 @@ public class CircleController {
 		}
 		catch(Exception e)
 		{
+			//give proper message, not void
 			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		}
 	}
